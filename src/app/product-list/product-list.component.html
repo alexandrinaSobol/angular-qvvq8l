@@ -1,19 +1,23 @@
 <h2>Products</h2>
 
 <div *ngFor="let product of products">
-	<h3>
-		<a [title]="product.name + ' details'" [routerLink]="['/products', product.id]">
-			{{ product.name }}
-		</a>
-	</h3>
+  <h3>
+    <a
+     [title]="product.name + 'description'"
+      [routerLink]="['/products', product.id]"
+      (click)="console(product.id)"
+    >
+      {{ product.name }}
+    </a>
+  </h3>
 
-	<p *ngIf="product.description">
-		Description: {{ product.description }}
-	</p>
-	<button (click)="share()">
+  <p *ngIf="product.description">
+  {{ product.description }}
+  </p>
+  <button (click)="share()" [routerLink]="['/cart']">
     Share!
   </button>
 
-	<app-product-alerts [product]="product" (notify)="onNotify()">
-	</app-product-alerts>
+  <app-product-alerts [product]="product" (notify)="onNotify()">
+  </app-product-alerts>
 </div>
