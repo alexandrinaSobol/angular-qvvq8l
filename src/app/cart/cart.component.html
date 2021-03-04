@@ -8,13 +8,12 @@
 	<span>{{ item.name }}</span>
 	<span>{{ item.price | currency }}</span>
 </div>
-
-<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+<form action="dislay.html" method="GET">
 	<div>
 		<label for="name">
       Name
     </label>
-		<input id="name" type="text" formControlName="name" />
+		<input id="name" type="text" formControlName="name"/>
   </div>
 
 		<div>
@@ -24,4 +23,11 @@
 			<input id="address" type="text" formControlName="address" />
   </div>
 			<button class="button" type="submit" [routerLink]="['/user']">Purchase</button>
+      <h1></h1>
 </form>
+
+<button [routerLink]="['/editor']">
+    Name Editor!
+  </button>
+
+<form>

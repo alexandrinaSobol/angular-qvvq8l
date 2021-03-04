@@ -15,6 +15,10 @@ export class CartComponent {
     address: ''
   });
 
+  click(value: number){
+return 15
+  };
+
   constructor(private cartService: CartService,
   private formBuilder: FormBuilder,) {}
 
